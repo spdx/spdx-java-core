@@ -63,7 +63,7 @@ import org.spdx.storage.IModelStore.ModelUpdate;
  * <p>
  * Property values are restricted to the following types:
  *   - String - Java Strings
- *   - Booolean - Java Boolean or primitive boolean types
+ *   - Boolean - Java Boolean or primitive boolean types
  *   - CoreModelObject - A concrete subclass of this type
  *   - {@literal Collection<T>} - A Collection of type T where T is one of the supported non-collection types
  * <p>
@@ -197,7 +197,7 @@ public abstract class CoreModelObject {
 	public abstract String getType();
 		
 	/**
-	 * Enter a critical section. leaveCriticialSection must be called.
+	 * Enter a critical section. leaveCriticalSection must be called.
 	 * @param readLockRequested true implies a read lock, false implies write lock.
 	 * @throws InvalidSPDXAnalysisException on any SPDX related exception
 	 */
@@ -223,7 +223,7 @@ public abstract class CoreModelObject {
 	
 	/**
 	 * @param specVersion Version of the SPDX spec to verify against
-	 * @param verifiedIds verifiedIds list of all Id's which have already been verifieds - prevents infinite recursion
+	 * @param verifiedIds verifiedIds list of all Id's which have already been verified - prevents infinite recursion
 	 * @return Any verification errors or warnings associated with this object
 	 */
 	public abstract List<String> verify(Set<String> verifiedIds, String specVersion);
@@ -247,7 +247,7 @@ public abstract class CoreModelObject {
 	 * Verifies all elements in a collection
 	 * @param specVersion version of the SPDX specification to verify against
 	 * @param collection collection to be verifies
-	 * @param verifiedIds verifiedIds list of all Id's which have already been verifieds - prevents infinite recursion
+	 * @param verifiedIds verifiedIds list of all Id's which have already been verified - prevents infinite recursion
 	 * @param warningPrefix String to prefix any warning messages
 	 */
 	public List<String> verifyCollection(Collection<? extends CoreModelObject> collection, String warningPrefix, Set<String> verifiedIds, String specVersion) {
@@ -890,7 +890,7 @@ public abstract class CoreModelObject {
 	}
 	
 	/**
-	 * @return the copy manager - value may be null if copies are not allowd
+	 * @return the copy manager - value may be null if copies are not allowed
 	 */
 	public IModelCopyManager getCopyManager() {
 		return this.copyManager;
@@ -989,7 +989,7 @@ public abstract class CoreModelObject {
 
 	/**
 	 * @return the version of the SPDX specification this object complies with
-	 * @throws InvalidSPDXAnalysisException - this is here just for compatibility with overriden methods
+	 * @throws InvalidSPDXAnalysisException - this is here just for compatibility with overridden methods
 	 */
 	public String getSpecVersion() throws InvalidSPDXAnalysisException {
 		return this.specVersion;
