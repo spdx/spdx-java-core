@@ -115,7 +115,7 @@ public class LicenseTextHelper {
 	public static boolean isLicenseTextEquivalent(String licenseTextA, String licenseTextB) {
 		//TODO: Handle comment characters without white space before text
 		//TODO: Handle bullets and numbering
-		// Need to take care of multi-word equivalent words - convert to single words with hypens
+		// Need to take care of multi-word equivalent words - convert to single words with hyphens
 		
 		// tokenize each of the strings
 		if (licenseTextA == null) {
