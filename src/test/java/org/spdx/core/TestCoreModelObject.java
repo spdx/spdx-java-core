@@ -217,7 +217,7 @@ public class TestCoreModelObject {
 		assertTrue(c2.size() == cResult.size() && c2.containsAll(cResult) && cResult.containsAll(c2));
 		
 		modelType.setPropertyValue(INTEGER_PROPERTY_DESCRIPTOR, 15);
-		assertEquals(new Integer(15), modelType.getIntegerPropertyValue(INTEGER_PROPERTY_DESCRIPTOR).get());
+		assertEquals(Integer.valueOf(15), modelType.getIntegerPropertyValue(INTEGER_PROPERTY_DESCRIPTOR).get());
 		// Object property is tested in getPropertyValue tests
 	}
 
