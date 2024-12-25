@@ -28,14 +28,17 @@ import org.spdx.core.InvalidSPDXAnalysisException;
 
 /**
  * A model store that can be serialized and de-serialized to and from a <code>Stream</code>
- * @author Gary O'Neall
  *
+ * @author Gary O'Neall
  */
 @SuppressWarnings("unused")
 public interface ISerializableModelStore extends IModelStore {
 
 	/**
-	 * Serialize all the items stored in the model store.  The specific format for serialization depends on the document store.
+	 * Serialize all the items stored in the model store
+	 * <p>
+	 * The specific format for serialization depends on the document store.
+	 * 
 	 * @param stream output stream to serialize to
 	 * @throws InvalidSPDXAnalysisException on any SPDX error
 	 * @throws IOException on IO error
@@ -43,7 +46,10 @@ public interface ISerializableModelStore extends IModelStore {
     void serialize(OutputStream stream)  throws InvalidSPDXAnalysisException, IOException;
 	
 	/**
-	 * Serialize the items stored in the model store.  The specific format for serialization depends on the document store.
+	 * Serialize the items stored in the model store
+	 * <p>
+	 * The specific format for serialization depends on the document store.
+	 *
 	 * @param stream output stream to serialize to
 	 * @param objectToSerialize if an SpdxDocument, serialize all elements represented by that document, otherwise
 	 * serialize just the object.  If null, serialize all items in the store.
@@ -54,6 +60,7 @@ public interface ISerializableModelStore extends IModelStore {
 	
 	/**
 	 * Deserialize / read an SPDX document from a stream
+	 *
 	 * @param stream input stream to deserialize from
 	 * @param overwrite if true, allow any existing documents with the same documentUri to be overwritten
 	 * @return a model object representing the deserialized SPDX data - commonly an SPDX Document, but depends on version and what was serialized

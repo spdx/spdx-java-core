@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 import org.spdx.storage.IModelStore;
 
 /**
- * @author gary
+ * @author Gary O'Neall
  *
  */
 public class MockModelInfo implements ISpdxModelInfo {

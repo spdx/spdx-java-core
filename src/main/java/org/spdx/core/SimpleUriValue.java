@@ -27,12 +27,14 @@ import org.slf4j.LoggerFactory;
 import org.spdx.storage.IModelStore;
 
 /**
- * Simple class to just store a URI value.  The method toModelObject will convert / inflate the value back to
- * either an Enum (if the URI matches), an ExternalSpdxElement if it matches the pattern of an external SPDX element 
+ * Simple class to just store a URI value
+ * <p>
+ * The method toModelObject will convert / inflate the value back to
+ * either an Enum (if the URI matches), an ExternalSpdxElement if it matches
+ * the pattern of an external SPDX element 
  * or returns itself otherwise
  * 
  * @author Gary O'Neall
- *
  */
 public class SimpleUriValue implements IndividualUriValue {
 	

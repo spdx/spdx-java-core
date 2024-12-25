@@ -16,10 +16,9 @@
  *   limitations under the License.
  */
 /**
- * Contains classes that implement the storage interfaces for reading and writing 
- * SPDX document properties.
+ * Classes that implement the storage interfaces for reading and writing 
+ * SPDX document properties
  * 
  * @author Gary O'Neall
- *
  */
-package org.spdx.storage;
+package org.spdx.storage

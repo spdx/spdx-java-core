@@ -18,11 +18,13 @@
 package org.spdx.core;
 
 /**
- * Classes which implement the IndividuallUriValue interface will be stored as a single value.  Theses classes
- * must NOT implement any properties themselves.  Any such properties will be lost during storage and retrieval.
+ * Implementation classes of the <code>IndividuallUriValue</code> stores
+ * a single URI value
+ * <p>
+ * Theses classes must NOT implement any properties themselves.
+ * Any such properties will be lost during storage and retrieval.
  * 
  * @author Gary O'Neall
- *
  */
 public interface IndividualUriValue {
 	

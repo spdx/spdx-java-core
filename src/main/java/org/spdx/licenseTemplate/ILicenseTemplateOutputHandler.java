@@ -17,11 +17,12 @@
 package org.spdx.licenseTemplate;
 
 /**
- * Handles output for parsed license templates.  The methods are called during parsing
+ * Handles output for parsed license templates
+ * <p>
+ * The methods are called during parsing
  * to handle the parsed rules and text.
  * 
  * @author Gary O'Neall
- *
  */
 public interface ILicenseTemplateOutputHandler {
 

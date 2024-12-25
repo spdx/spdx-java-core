@@ -21,9 +21,10 @@ import java.util.Objects;
 
 /**
  * Holds a description of a property including the property name and property 
- * nameSpace. Includes a helper function to default the namespace. 
+ * nameSpace
+ * <p>
+ * Includes a helper function to default the namespace.
  * @author Gary O'Neall
- *
  */
 public class PropertyDescriptor {
 	

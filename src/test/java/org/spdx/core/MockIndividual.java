@@ -5,7 +5,7 @@
 package org.spdx.core;
 
 /**
- * @author gary
+ * @author Gary O'Neall
  *
  */
 public class MockIndividual implements IndividualUriValue {

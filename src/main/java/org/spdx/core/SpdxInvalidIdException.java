@@ -21,14 +21,10 @@ package org.spdx.core;
  * Invalid SPDX identifier
  * 
  * @author Gary O'Neall
- *
  */
 @SuppressWarnings("unused")
 public class SpdxInvalidIdException extends InvalidSPDXAnalysisException {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	/**

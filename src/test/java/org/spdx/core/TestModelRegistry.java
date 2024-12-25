@@ -19,7 +19,7 @@ import org.spdx.storage.MockModelStore;
  */
 
 /**
- * @author gary
+ * @author Gary O'Neall
  *
  */
 public class TestModelRegistry {

@@ -16,9 +16,8 @@
  *   limitations under the License.
  */
 /**
- * License template are used for matching licenses.
+ * License template are used for matching licenses
  * 
  * @author Gary O'Neall
- *
  */
 package org.spdx.licenseTemplate;

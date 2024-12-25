@@ -16,7 +16,7 @@ import org.spdx.storage.MockModelStore;
 import org.spdx.storage.PropertyDescriptor;
 
 /**
- * @author gary
+ * @author Gary O'Neall
  *
  */
 public class TestModelCollection {

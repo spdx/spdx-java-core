@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.spdx.storage.MockModelStore;
 
 /**
- * @author gary
+ * @author Gary O'Neall
  *
  */
 public class TestSimpleUriValue {

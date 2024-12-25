@@ -20,8 +20,10 @@ package org.spdx.core;
 import org.spdx.storage.PropertyDescriptor;
 
 /**
- * Primarily used for debugging.  Records details when two model objects are compared and are determined to not
- * be equivalent
+ * Records details when two model objects are compared and are determined to
+ * not be equivalent
+ * <p>
+ * Primarily used for debugging.
  * 
  * @author Gary O'Neall
  */

@@ -38,7 +38,6 @@ import org.spdx.storage.IModelStore.IdType;
 import org.spdx.storage.IModelStore.ModelUpdate;
 
 /**
- * 
  * Superclass for all SPDX model objects
  * <p>
  * Provides the primary interface to the storage class that access and stores the data for 
@@ -70,7 +69,6 @@ import org.spdx.storage.IModelStore.ModelUpdate;
  * This class also handles the conversion of a CoreModelObject to and from a TypeValue for storage in the ModelStore.
  *
  * @author Gary O'Neall
- * 
  */
 @SuppressWarnings({"OptionalUsedAsFieldOrParameterType", "LoggingSimilarMessage"})
 public abstract class CoreModelObject {

@@ -17,10 +17,12 @@
 package org.spdx.licenseTemplate;
 
 /**
- * License template output handler for generating a text version of a license from a license template.
+ * License template output handler for generating a text version of a license
+ * from a license template
+ * <p>
  * Used when parsing a license template.
+ * 
  * @author Gary O'Neall
- *
  */
 public class TextTemplateOutputHandler implements ILicenseTemplateOutputHandler {
 
