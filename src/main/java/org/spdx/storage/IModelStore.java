@@ -17,6 +17,7 @@
  */
 package org.spdx.storage;
 
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -222,15 +223,6 @@ public interface IModelStore extends AutoCloseable {
     IdType getIdType(String objectUri);
 
 	/**
-	 * In SPDX 2.2 license refs are allowed to be matched case-insensitive.  This function will return
-	 * the case-sensitive ID (e.g. if you have LicenseRef-ABC, calling this function with licenseref-abc will return LicenseRef-ABC
-	 * @param nameSpace the nameSpace used for the ID - the URI is formed by the nameSpace + "#" + caseInsensitiveId
-	 * @param caseInsensitiveId ID - case will be ignored
-	 * @return the case-sensitive ID if it exists
-	 */
-    Optional<String> getCaseSensitiveId(String nameSpace, String caseInsensitiveId);
-
-	/**
 	 * Alias for getCaseSensitiveId
 	 * @param nameSpace the nameSpace used for the ID - the URI is formed by the nameSpace + "#" + caseInsensisitiveId
 	 * @param caseInsensisitiveId ID - case will be ignored
@@ -239,7 +231,38 @@ public interface IModelStore extends AutoCloseable {
 	 */
 	@Deprecated
 	default Optional<String> getCaseSensisitiveId(String nameSpace, String caseInsensisitiveId) {
-		return getCaseSensitiveId(nameSpace, caseInsensisitiveId);
+		Method[] methods = this.getClass().getMethods();
+		for (Method method:methods) {
+			if (method.getName().equals("getCaseSensitiveId")) {
+				if (method.isDefault()) {
+					throw new RuntimeException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+				} else {
+					return getCaseSensitiveId(nameSpace, caseInsensisitiveId);
+				}
+			}
+		}
+		throw new RuntimeException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+	}
+
+	/**
+	 * In SPDX 2.2 license refs are allowed to be matched case-insensitive.  This function will return
+	 * the case-sensitive ID (e.g. if you have LicenseRef-ABC, calling this function with licenseref-abc will return LicenseRef-ABC
+	 * @param nameSpace the nameSpace used for the ID - the URI is formed by the nameSpace + "#" + caseInsensitiveId
+	 * @param caseInsensitiveId ID - case will be ignored
+	 * @return the case-sensitive ID if it exists
+	 */
+	default Optional<String> getCaseSensitiveId(String nameSpace, String caseInsensitiveId) {
+		Method[] methods = this.getClass().getMethods();
+		for (Method method:methods) {
+			if (method.getName().equals("getCaseSensisitiveId")) {
+				if (method.isDefault()) {
+					throw new RuntimeException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+				} else {
+					return getCaseSensisitiveId(nameSpace, caseInsensitiveId);
+				}
+			}
+		}
+		throw new RuntimeException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
 	}
 
 	/**
