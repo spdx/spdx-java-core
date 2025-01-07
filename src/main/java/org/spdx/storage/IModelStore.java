@@ -25,6 +25,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.Nullable;
 
+import org.apache.commons.lang3.NotImplementedException;
 import org.spdx.core.InvalidSPDXAnalysisException;
 import org.spdx.core.TypedValue;
 
@@ -235,13 +236,13 @@ public interface IModelStore extends AutoCloseable {
 		for (Method method:methods) {
 			if (method.getName().equals("getCaseSensitiveId")) {
 				if (method.isDefault()) {
-					throw new RuntimeException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+					throw new NotImplementedException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
 				} else {
 					return getCaseSensitiveId(nameSpace, caseInsensisitiveId);
 				}
 			}
 		}
-		throw new RuntimeException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+		throw new NotImplementedException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
 	}
 
 	/**
@@ -256,13 +257,13 @@ public interface IModelStore extends AutoCloseable {
 		for (Method method:methods) {
 			if (method.getName().equals("getCaseSensisitiveId")) {
 				if (method.isDefault()) {
-					throw new RuntimeException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+					throw new NotImplementedException("No implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
 				} else {
 					return getCaseSensisitiveId(nameSpace, caseInsensitiveId);
 				}
 			}
 		}
-		throw new RuntimeException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
+		throw new NotImplementedException("Could not find implementation for getCaseSensitiveId in a ModelStore implementation " + this.getClass());
 	}
 
 	/**
