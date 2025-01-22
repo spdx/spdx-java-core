@@ -62,8 +62,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#getObjectPropertyValue(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, org.spdx.core.IModelCopyManager, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#getObjectPropertyValue(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, org.spdx.core.IModelCopyManager, java.lang.String, java.lang.Class, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testGetObjectPropertyValue() throws InvalidSPDXAnalysisException {
@@ -78,13 +78,13 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#setPropertyValue(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.lang.Object, org.spdx.core.IModelCopyManager)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#setPropertyValue(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.lang.Object, org.spdx.core.IModelCopyManager, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testSetPropertyValue() throws InvalidSPDXAnalysisException {
-		
+
 		// String
 		String strValue = "This is a string";
 		ModelObjectHelper.setPropertyValue(modelStore, OBJECT_URI, STRING_PROPERTY_DESCRIPTOR, strValue, copyManager, null);
@@ -169,8 +169,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#addValueToCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.lang.Object, org.spdx.core.IModelCopyManager)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#addValueToCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.lang.Object, org.spdx.core.IModelCopyManager, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@SuppressWarnings("unchecked")
 	@Test
@@ -191,8 +191,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#replacePropertyValueCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.util.Collection, org.spdx.core.IModelCopyManager)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#replacePropertyValueCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, java.util.Collection, org.spdx.core.IModelCopyManager, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@SuppressWarnings("unchecked")
 	@Test
@@ -237,8 +237,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#optionalStoredObjectToModelObject(java.util.Optional, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#optionalStoredObjectToModelObject(java.util.Optional, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String, java.lang.Class, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testOptionalStoredObjectToModelObject() throws InvalidSPDXAnalysisException {
@@ -268,8 +268,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#modelObjectToStoredObject(java.lang.Object, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#modelObjectToStoredObject(java.lang.Object, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testModelObjectToStoredObject() throws InvalidSPDXAnalysisException {
@@ -299,8 +299,8 @@ public class TestModelObjectHelper {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelObjectHelper#storedObjectToModelObject(java.lang.Object, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.ModelObjectHelper#storedObjectToModelObject(java.lang.Object, org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String, java.lang.Class, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testStoredObjectToModelObject() throws InvalidSPDXAnalysisException {

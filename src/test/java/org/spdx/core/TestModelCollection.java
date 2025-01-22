@@ -47,7 +47,7 @@ public class TestModelCollection {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelCollection#ModelCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, org.spdx.core.IModelCopyManager, java.lang.Class, java.lang.String)}.
+	 * Test method for {@link org.spdx.core.ModelCollection#ModelCollection(org.spdx.storage.IModelStore, java.lang.String, org.spdx.storage.PropertyDescriptor, org.spdx.core.IModelCopyManager, java.lang.Class, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void testModelCollection() {
@@ -158,7 +158,7 @@ public class TestModelCollection {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.ModelCollection#toArray(AT[])}.
+	 * Test method for {@link org.spdx.core.ModelCollection#toArray(Object[])}.
 	 * @throws InvalidSPDXAnalysisException 
 	 */
 	@Test

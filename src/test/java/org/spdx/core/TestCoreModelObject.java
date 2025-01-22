@@ -66,8 +66,8 @@ public class TestCoreModelObject {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.CoreModelObject#CoreModelObject(org.spdx.storage.IModelStore, java.lang.String, org.spdx.core.IModelCopyManager, boolean, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.CoreModelObject#CoreModelObject(org.spdx.storage.IModelStore, java.lang.String, org.spdx.core.IModelCopyManager, boolean, java.lang.String, java.lang.String)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testCoreModelObjectIModelStoreStringIModelCopyManagerBooleanString() throws InvalidSPDXAnalysisException {

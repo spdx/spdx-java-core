@@ -28,7 +28,7 @@ import org.spdx.licenseTemplate.LicenseTemplateRule.RuleType;
 public class TestTextTemplateOutputHandler {
 
 	/**
-	 * Test method for {@link org.spdx.licenseTemplate.TextTemplateOutputHandler#normalText(java.lang.String)}.
+	 * Test method for {@link org.spdx.licenseTemplate.TextTemplateOutputHandler#text(java.lang.String)}.
 	 */
 	@Test
 	public void testNormalText() {

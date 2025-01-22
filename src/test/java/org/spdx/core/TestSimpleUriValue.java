@@ -68,8 +68,8 @@ public class TestSimpleUriValue {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.core.SimpleUriValue#toModelObject(org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * Test method for {@link org.spdx.core.SimpleUriValue#toModelObject(org.spdx.storage.IModelStore, org.spdx.core.IModelCopyManager, java.lang.String, java.lang.Class)}.
+	 * @throws InvalidSPDXAnalysisException
 	 */
 	@Test
 	public void testToModelObject() throws InvalidSPDXAnalysisException {

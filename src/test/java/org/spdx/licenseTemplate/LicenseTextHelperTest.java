@@ -49,7 +49,7 @@ public class LicenseTextHelperTest extends TestCase {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.utility.compare.LicenseTextHelper#isLicenseTextEquivalent(java.lang.String, java.lang.String)}.
+	 * Test method for {@link org.spdx.licenseTemplate.LicenseTextHelper#isLicenseTextEquivalent(java.lang.String, java.lang.String)}.
 	 */
 	public void testLicensesMatch() {
 		// equal strings

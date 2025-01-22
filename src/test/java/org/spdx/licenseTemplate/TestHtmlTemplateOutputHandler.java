@@ -28,7 +28,7 @@ import org.spdx.licenseTemplate.LicenseTemplateRule.RuleType;
 public class TestHtmlTemplateOutputHandler {
 
 	/**
-	 * Test method for {@link org.spdx.licenseTemplate.HtmlTemplateOutputHandler#normalText(java.lang.String)}.
+	 * Test method for {@link org.spdx.licenseTemplate.HtmlTemplateOutputHandler#text(java.lang.String)}.
 	 */
 	@Test
 	public void testNormalText() {
@@ -162,7 +162,7 @@ public class TestHtmlTemplateOutputHandler {
 	}
 
 	/**
-	 * Test method for {@link org.spdx.licenseTemplate.HtmlTemplateOutputHandler#formatEndOptionalHTML()}.
+	 * Test method for {@link org.spdx.licenseTemplate.HtmlTemplateOutputHandler#formatEndOptionalHTML(boolean)}.
 	 */
 	@Test
 	public void testFormatEndOptionalHTML() {
