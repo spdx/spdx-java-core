@@ -92,7 +92,7 @@ public class TestCoreModelObject {
 		assertEquals(modelStore, result.getModelStore());
 		assertEquals(objectUri, result.getObjectUri());
 		assertEquals(copyManager, result.getCopyManager());
-		assertEquals(false, result.isStrict());
+		assertFalse(result.isStrict());
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class TestCoreModelObject {
 		modelType.setPropertyValue(BOOLEAN_PROPERTY_DESCRIPTOR, false);
 		Optional<Boolean> bResult = modelType.getBooleanPropertyValue(BOOLEAN_PROPERTY_DESCRIPTOR);
 		assertTrue(bResult.isPresent());
-		assertEquals(false, bResult.get());
+		assertFalse(bResult.get());
 		// enumeration
 		modelType.setPropertyValue(ENUM_PROPERTY_DESCRIPTOR, MockEnum.ENUM1);
 		Optional<? extends Enum<?>> eResult = modelType.getEnumPropertyValue(ENUM_PROPERTY_DESCRIPTOR);

@@ -104,7 +104,7 @@ public class TestModelRegistry {
 		assertTrue(oResult instanceof MockModelType);
 		assertEquals(OBJECT_URI, ((MockModelType)oResult).getObjectUri());
 		Class<?> cResult = ModelRegistry.getModelRegistry().typeToClass(MockModelType.TYPE, "3.0.0");
-		assertEquals(cResult, MockModelType.class);
+		assertEquals(MockModelType.class, cResult);
 		Enum<?> eResult = ModelRegistry.getModelRegistry().uriToEnum(MockEnum.ENUM1.getIndividualURI(), "3.0.0");
 		assertEquals(MockEnum.ENUM1, eResult);
 		Object iResult = ModelRegistry.getModelRegistry().uriToIndividual(individual.getIndividualURI(), "3.0.0", null);

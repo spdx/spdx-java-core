@@ -154,11 +154,11 @@ public class TestSpdxLicenseTemplateHelper {
 		String noText = "";
 		TestLicenseTemplateOutputHandler handler = new TestLicenseTemplateOutputHandler();
 		SpdxLicenseTemplateHelper.parseTemplate(noText, handler);
-		assertEquals(null, optionalTextString);
-		assertEquals(null, normalTextString);
-		assertEquals(null, variableRule);
-		assertEquals(null, optionalRule);
-		assertEquals(null, endOptionalRule);
+		assertNull(optionalTextString);
+		assertNull(normalTextString);
+		assertNull(variableRule);
+		assertNull(optionalRule);
+		assertNull(endOptionalRule);
 
 		handler = new TestLicenseTemplateOutputHandler();
 		SpdxLicenseTemplateHelper.parseTemplate(PARSE_TEXT_STRING, handler);
