@@ -42,6 +42,19 @@ public class DefaultModelStore {
 	private DefaultModelStore() {
 		// prevent instantiating class
 	}
+
+	/**
+	 * Checks if the default model store is initialized
+	 * @return true if the model store is initialized
+	 */
+	public static boolean isInitialized() {
+		lock.readLock().lock();
+		try {
+			return Objects.nonNull(defaultStore);
+		} finally {
+			lock.readLock().unlock();
+		}
+	}
 	
 	/**
 	 * @return the default model store
