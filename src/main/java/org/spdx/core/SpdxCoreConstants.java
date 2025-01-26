@@ -11,14 +11,33 @@ package org.spdx.core;
  */
 public class SpdxCoreConstants {
 
+	/**
+	 * Enumeration representing the major versions of the SPDX specification
+	 */
 	@SuppressWarnings("unused")
     public enum SpdxMajorVersion {
+		/**
+		 * SPDX version 1.x
+		 */
 		VERSION_1("SPDX-1."),
+
+		/**
+		 * SPDX version 2.x
+		 */
 		VERSION_2("SPDX-2."),
+
+		/**
+		 * SPDX version 3.x
+		 */
 		VERSION_3("3.");
 
 		private final String prefix;
-		
+
+		/**
+		 * Returns the latest major version of the SPDX specification.
+		 *
+		 * @return the latest major version
+		 */
 		public static SpdxMajorVersion latestVersion() {
 			return VERSION_3;
 		}
@@ -35,10 +54,17 @@ public class SpdxCoreConstants {
 		}
 	}
 
-		// SPDX Listed License constants
+	/**
+	 * The URL for the SPDX Listed Licenses.
+ 	 */
 	public static final String LISTED_LICENSE_URL = "https://spdx.org/licenses/";
-	// http rather than https since RDF depends on the exact string, 
-	// we were not able to update the namespace variable to match the URL's.
+
+	/**
+	 * The namespace prefix for the SPDX Listed Licenses.
+	 * <p>
+	 * Note: This uses "http" rather than "https" since RDF depends on the exact string,
+	 * and we were not able to update the namespace variable to match the URL's.
+	 */
 	public static final String LISTED_LICENSE_NAMESPACE_PREFIX = "http://spdx.org/licenses/";
 
 }
