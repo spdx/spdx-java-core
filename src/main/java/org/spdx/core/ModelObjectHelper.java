@@ -48,7 +48,7 @@ public class ModelObjectHelper {
 	 * @param objectUri the Object URI or anonymous ID
 	 * @param propertyDescriptor property descriptor for the property
 	 * @param copyManager if non null, any ModelObject property value not stored in the modelStore under the stDocumentUri will be copied to make it available
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @param type optional type hint - used for individuals where the type may be ambiguous
 	 * @param idPrefix prefix to be used when generating new SPDX IDs
 	 * @return value associated with a property
@@ -184,7 +184,7 @@ public class ModelObjectHelper {
 	 * @param modelStore  ModelStore to use in fetching or creating
 	 * @param copyManager   if not null, copy any referenced ID's outside of this
 	 *                      document/model store
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @param type optional type hint - used for individuals where the type may be ambiguous
 	 * @param idPrefix Prefix to be used if any new object URI's are generated
 	 * @return the object itself unless it is a TypedValue, in which case a
@@ -250,7 +250,7 @@ public class ModelObjectHelper {
 	 * @param modelStore  ModelStore to use in fetching or creating
 	 * @param copyManager if not null, copy any referenced ID's outside of this
 	 *                    document/model store
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @param type optional type hint - used for individuals where the type may be ambiguous
 	 * @param idPrefix Prefix to be used if any new object URI's are generated
 	 * @return the object itself unless it is a TypedValue, in which case a

@@ -102,7 +102,7 @@ public abstract class CoreModelObject {
 		
 	/**
 	 * Create a new Model Object using an Anonymous ID with the default store and default document URI
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @throws InvalidSPDXAnalysisException on any SPDX related exception
 	 */
 	protected CoreModelObject(String specVersion) throws InvalidSPDXAnalysisException {
@@ -185,7 +185,7 @@ public abstract class CoreModelObject {
 
 	/**
 	 * @param builder base builder to create the CoreModelObject from
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @throws InvalidSPDXAnalysisException on any SPDX related exception
 	 */
 	protected CoreModelObject(CoreModelObjectBuilder builder, String specVersion) throws InvalidSPDXAnalysisException {

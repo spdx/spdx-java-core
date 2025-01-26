@@ -47,7 +47,7 @@ public class ModelSet<T extends Object> extends ModelCollection<Object> implemen
 	 * @param propertyDescriptor descriptor for the property use for the model collections
 	 * @param copyManager if non-null, use this to copy properties when referenced outside this model store
 	 * @param type The class of the elements to be stored in the collection if none, null if not known
-	 * @param specVersion - version of the SPDX spec the object complies with
+	 * @param specVersion version of the SPDX spec the object complies with
 	 * @param idPrefix prefix to be used when generating new SPDX IDs
 	 * @throws InvalidSPDXAnalysisException on parsing or store errors
 	 */
