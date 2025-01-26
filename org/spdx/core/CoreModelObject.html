@@ -148,19 +148,24 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  is passed as a parameter.
  <p>
  There are 2 methods of setting values:
-   - call the setPropertyValue, clearValueCollection or addValueToCollection methods - this will call the modelStore and store the
-     value immediately
-   - Gather a list of updates by calling the updatePropertyValue, updateClearValueList, or updateAddPropertyValue
+ <ul>
+   <li>Call the setPropertyValue, clearValueCollection or addValueToCollection methods.
+     This will call the modelStore and store the value immediately.</li>
+   <li>Gather a list of updates by calling the updatePropertyValue, updateClearValueList, or updateAddPropertyValue
      methods.  These methods return a ModelUpdate which can be applied later by calling the <code>apply()</code> method.
      A convenience method <code>Write.applyUpdatesInOneTransaction</code> will perform all updates within
      a single transaction. This method may result in higher performance updates for some Model Store implementations.
      Note that none of the updates will be applied until the storage manager update method is invoked.
+   </li>
+ </ul>
  <p>
  Property values are restricted to the following types:
-   - String - Java Strings
-   - Boolean - Java Boolean or primitive boolean types
-   - CoreModelObject - A concrete subclass of this type
-   - Collection&lt;T&gt; - A Collection of type T where T is one of the supported non-collection types
+ <ul>
+   <li>String - Java Strings</li>
+   <li>Boolean - Java Boolean or primitive boolean types</li>
+   <li>CoreModelObject - A concrete subclass of this type</li>
+   <li>Collection&lt;T&gt; - A Collection of type T where T is one of the supported non-collection types</li>
+ </ul>
  <p>
  This class also handles the conversion of a CoreModelObject to and from a TypeValue for storage in the ModelStore.</div>
 <dl>
@@ -734,7 +739,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Create a new Model Object using an Anonymous ID with the default store and default document URI</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>specVersion</code> - - version of the SPDX spec the object complies with</dd>
+<dd><code>specVersion</code> - version of the SPDX spec the object complies with</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidSPDXAnalysisException.html" title="class in org.spdx.core">InvalidSPDXAnalysisException</a></code> - on any SPDX related exception</dd>
 </dl>
@@ -753,7 +758,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>objectUri</code> - Anonymous ID or URI for the model object</dd>
-<dd><code>specVersion</code> - - version of the SPDX spec the object complies with</dd>
+<dd><code>specVersion</code> - Version of the SPDX spec the object complies with</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidSPDXAnalysisException.html" title="class in org.spdx.core">InvalidSPDXAnalysisException</a></code> - on any SPDX related exception</dd>
 </dl>
@@ -799,7 +804,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>builder</code> - base builder to create the CoreModelObject from</dd>
-<dd><code>specVersion</code> - - version of the SPDX spec the object complies with</dd>
+<dd><code>specVersion</code> - version of the SPDX spec the object complies with</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidSPDXAnalysisException.html" title="class in org.spdx.core">InvalidSPDXAnalysisException</a></code> - on any SPDX related exception</dd>
 </dl>
