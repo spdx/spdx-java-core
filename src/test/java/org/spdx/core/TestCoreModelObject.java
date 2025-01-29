@@ -24,8 +24,10 @@ import org.spdx.storage.PropertyDescriptor;
  *
  */
 public class TestCoreModelObject {
-	
-	static final String OBJECT_URI = "https://myspdx.docs/objecturi#part1";
+
+	static final String PREFIX = "https://myspdx.docs/objecturi#";
+	static final String ID = "part1";
+	static final String OBJECT_URI = PREFIX + ID;
 	static final String OBJECT_PROPERTY_NAME = "objectPropName";
 	static final String PROPERTY_NAMESPACE = "https://spdx-mock/namespace";
 	static final String STRING_PROPERTY_NAME = "stringPropName";
@@ -80,7 +82,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#CoreModelObject(org.spdx.core.CoreModelObject.CoreModelObjectBuilder, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testCoreModelObjectCoreModelObjectBuilderString() throws InvalidSPDXAnalysisException {
@@ -108,7 +110,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#verifyCollection(java.util.Collection, java.lang.String, java.util.Set, java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testVerifyCollection() throws InvalidSPDXAnalysisException {
@@ -134,7 +136,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#getPropertyValueDescriptors()}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testGetPropertyValueDescriptors() throws InvalidSPDXAnalysisException {
@@ -163,7 +165,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#getObjectPropertyValue(org.spdx.storage.PropertyDescriptor)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testGetObjectPropertyValue() throws InvalidSPDXAnalysisException {
@@ -179,7 +181,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#setPropertyValue(org.spdx.storage.PropertyDescriptor, java.lang.Object)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testSetPropertyValue() throws InvalidSPDXAnalysisException {
@@ -223,7 +225,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#removeProperty(org.spdx.storage.PropertyDescriptor)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testRemoveProperty() throws InvalidSPDXAnalysisException {
@@ -239,7 +241,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#clearValueCollection(org.spdx.storage.PropertyDescriptor)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testClearValueCollection() throws InvalidSPDXAnalysisException {
@@ -258,7 +260,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#addPropertyValueToCollection(org.spdx.storage.PropertyDescriptor, java.lang.Object)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testAddPropertyValueToCollection() throws InvalidSPDXAnalysisException {
@@ -273,7 +275,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#removePropertyValueFromCollection(org.spdx.storage.PropertyDescriptor, java.lang.Object)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testRemovePropertyValueFromCollection() throws InvalidSPDXAnalysisException {
@@ -288,7 +290,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#getObjectPropertyValueSet(org.spdx.storage.PropertyDescriptor, java.lang.Class)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testGetObjectPropertyValueSet() throws InvalidSPDXAnalysisException {
@@ -305,7 +307,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#getObjectPropertyValueCollection(org.spdx.storage.PropertyDescriptor, java.lang.Class)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testGetObjectPropertyValueCollection() throws InvalidSPDXAnalysisException {
@@ -322,7 +324,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#equivalent(org.spdx.core.CoreModelObject, boolean)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testEquivalentCoreModelObjectBoolean() throws InvalidSPDXAnalysisException {
@@ -371,7 +373,7 @@ public class TestCoreModelObject {
 
 	/**
 	 * Test method for {@link org.spdx.core.CoreModelObject#toTypedValue()}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on unexpected errors
 	 */
 	@Test
 	public void testToTypedValue() throws InvalidSPDXAnalysisException {
@@ -379,6 +381,15 @@ public class TestCoreModelObject {
 		assertEquals(OBJECT_URI, result.getObjectUri());
 		assertEquals(MockModelType.TYPE, result.getType());
 		assertEquals("3.0.0", result.getSpecVersion());
+	}
+
+	@Test
+	public void testGetId() throws InvalidSPDXAnalysisException {
+		CoreModelObject prefix = new MockModelType(modelStore, OBJECT_URI, copyManager, true, "3.0.0");
+		prefix.setIdPrefix(PREFIX);
+		assertEquals(ID, prefix.getId());
+		CoreModelObject noPrefix = new MockModelType(modelStore, OBJECT_URI, copyManager, true, "3.0.0");
+		assertEquals(OBJECT_URI, noPrefix.getId());
 	}
 
 }

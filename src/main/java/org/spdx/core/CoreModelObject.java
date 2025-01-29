@@ -1031,4 +1031,13 @@ public abstract class CoreModelObject {
 	public void setIdPrefix(@Nullable String idPrefix) {
 		this.idPrefix = idPrefix;
 	}
+
+	/**
+	 * @return if the objectUri is prefixed by the idPrefix, returns just the id portion of the objectUri, otherwise
+	 * returns the objectUri
+	 */
+	public String getId() {
+		return Objects.nonNull(idPrefix) && objectUri.startsWith(idPrefix) ?
+				objectUri.substring(idPrefix.length()) : objectUri;
+	}
 }
