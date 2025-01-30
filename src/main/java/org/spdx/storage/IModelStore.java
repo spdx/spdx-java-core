@@ -64,7 +64,9 @@ public interface IModelStore extends AutoCloseable {
 		SpdxId, 			// ID's that start with SpdxRef-
 		ListedLicense, 		// ID's associated with listed licenses
 		Anonymous, 			// ID's for object only referenced internally
-		Unkown				// ID's that just don't fit any pattern (supposed to be "Unknown")
+		Unknown,			// ID's that just don't fit any pattern
+		@Deprecated
+		Unkown				// Miss-spelled version of "Unknown" - this will be removed in a future version
 	}
 
 	/**
