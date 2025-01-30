@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":6,"i26":10,"i27":10,"i28":10,"i29":10,"i30":6,"i31":6,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":6,"i50":10};
+var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":6,"i27":10,"i28":10,"i29":10,"i30":10,"i31":6,"i32":6,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":6,"i51":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -404,27 +404,32 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIdPrefix()">getIdPrefix</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIdPrefix()">getIdPrefix</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIntegerPropertyValue(org.spdx.storage.PropertyDescriptor)">getIntegerPropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.html" title="interface in org.spdx.storage">IModelStore</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getModelStore()">getModelStore</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectPropertyValue(org.spdx.storage.PropertyDescriptor)">getObjectPropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">
 <div class="block">Get an object value for a property</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectPropertyValue(org.spdx.storage.PropertyDescriptor,java.lang.Class)">getObjectPropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;type)</code></th>
@@ -432,66 +437,66 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Get an object value for a property</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="ModelCollection.html" title="class in org.spdx.core">ModelCollection</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectPropertyValueCollection(org.spdx.storage.PropertyDescriptor,java.lang.Class)">getObjectPropertyValueCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="ModelSet.html" title="class in org.spdx.core">ModelSet</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectPropertyValueSet(org.spdx.storage.PropertyDescriptor,java.lang.Class)">getObjectPropertyValueSet</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;type)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectUri()">getObjectUri</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPropertyValueDescriptors()">getPropertyValueDescriptors</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSpecVersion()">getSpecVersion</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStringCollection(org.spdx.storage.PropertyDescriptor)">getStringCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util" class="externalLink">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStringPropertyValue(org.spdx.storage.PropertyDescriptor)">getStringPropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getType()">getType</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCollectionMembersAssignableTo(org.spdx.storage.PropertyDescriptor,java.lang.Class)">isCollectionMembersAssignableTo</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;clazz)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEquivalentToNull(java.lang.Object,org.spdx.storage.PropertyDescriptor)">isEquivalentToNull</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;propertyValue,
                   <a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;descriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExternal()">isExternal</a></span>()</code></th>
 <td class="colLast">
@@ -499,36 +504,36 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  and set it to true</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>protected abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isNoAssertion(java.lang.Object)">isNoAssertion</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;propertyValue)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRelatedElement(org.spdx.storage.PropertyDescriptor)">isRelatedElement</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isStrict()">isStrict</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#leaveCriticalSection(org.spdx.storage.IModelStore.IModelStoreLock)">leaveCriticalSection</a></span>&#8203;(<a href="../storage/IModelStore.IModelStoreLock.html" title="interface in org.spdx.storage">IModelStore.IModelStoreLock</a>&nbsp;lock)</code></th>
 <td class="colLast">
 <div class="block">Leave a critical section.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeProperty(org.spdx.storage.PropertyDescriptor)">removeProperty</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">
 <div class="block">Removes a property and its value from the model store if it exists</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removePropertyValueFromCollection(org.spdx.storage.PropertyDescriptor,java.lang.Object)">removePropertyValueFromCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
@@ -536,21 +541,21 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Remove a property value from a collection</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCopyManager(org.spdx.core.IModelCopyManager)">setCopyManager</a></span>&#8203;(<a href="IModelCopyManager.html" title="interface in org.spdx.core">IModelCopyManager</a>&nbsp;copyManager)</code></th>
 <td class="colLast">
 <div class="block">Set the copy manager</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIdPrefix(java.lang.String)">setIdPrefix</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;idPrefix)</code></th>
 <td class="colLast">
 <div class="block">Sets the idPrefix</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPropertyValue(org.spdx.storage.PropertyDescriptor,java.lang.Object)">setPropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
@@ -558,22 +563,22 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Set a property value for a property descriptor, creating the property if necessary</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStrict(boolean)">setStrict</a></span>&#8203;(boolean&nbsp;strict)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code><a href="TypedValue.html" title="class in org.spdx.core">TypedValue</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toTypedValue()">toTypedValue</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.ModelUpdate.html" title="interface in org.spdx.storage">IModelStore.ModelUpdate</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAddPropertyValueToCollection(org.spdx.storage.PropertyDescriptor,java.lang.Object)">updateAddPropertyValueToCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
@@ -581,14 +586,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Create an update when, when applied, adds a value to a collection of values associated with a property.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.ModelUpdate.html" title="interface in org.spdx.storage">IModelStore.ModelUpdate</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateClearValueCollection(org.spdx.storage.PropertyDescriptor)">updateClearValueCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">
 <div class="block">Create an update when, when applied by the ModelStore, clears a collection of values associated with a property</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.ModelUpdate.html" title="interface in org.spdx.storage">IModelStore.ModelUpdate</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updatePropertyValue(org.spdx.storage.PropertyDescriptor,java.lang.Object)">updatePropertyValue</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
@@ -596,14 +601,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Create an update when, when applied by the ModelStore, sets a property value for a property descriptor, creating the property if necessary</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.ModelUpdate.html" title="interface in org.spdx.storage">IModelStore.ModelUpdate</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateRemoveProperty(org.spdx.storage.PropertyDescriptor)">updateRemoveProperty</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor)</code></th>
 <td class="colLast">
 <div class="block">Create an update when, when applied by the ModelStore, removes a property and its value from the model store if it exists</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code><a href="../storage/IModelStore.ModelUpdate.html" title="interface in org.spdx.storage">IModelStore.ModelUpdate</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateRemovePropertyValueFromCollection(org.spdx.storage.PropertyDescriptor,java.lang.Object)">updateRemovePropertyValueFromCollection</a></span>&#8203;(<a href="../storage/PropertyDescriptor.html" title="class in org.spdx.storage">PropertyDescriptor</a>&nbsp;propertyDescriptor,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value)</code></th>
@@ -611,23 +616,23 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Create an update when, when applied, removes a property value from a collection</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify()">verify</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.lang.String)">verify</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;specVersion)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.util.Set,java.lang.String)">verify</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;verifiedIds,
       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;specVersion)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifyCollection(java.util.Collection,java.lang.String,java.util.Set,java.lang.String)">verifyCollection</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? extends <a href="CoreModelObject.html" title="class in org.spdx.core">CoreModelObject</a>&gt;&nbsp;collection,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;warningPrefix,
@@ -1645,7 +1650,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <a id="setIdPrefix(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setIdPrefix</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setIdPrefix&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/javax/annotation/Nullable.html?is-external=true" title="class or interface in javax.annotation" class="externalLink">@Nullable</a>
@@ -1654,6 +1659,20 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>idPrefix</code> - prefix to be used when generating new IDs</dd>
+</dl>
+</li>
+</ul>
+<a id="getId()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getId</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>if the objectUri is prefixed by the idPrefix, returns just the id portion of the objectUri, otherwise
+ returns the objectUri</dd>
 </dl>
 </li>
 </ul>
