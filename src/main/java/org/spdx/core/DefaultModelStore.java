@@ -58,13 +58,13 @@ public class DefaultModelStore {
 	
 	/**
 	 * @return the default model store
-	 * @throws DefaultStoreNotInitialized if the <code>initialize(...)</code> was not called prior
+	 * @throws DefaultStoreNotInitializedException if the <code>initialize(...)</code> was not called prior
 	 */
-	public static IModelStore getDefaultModelStore() throws DefaultStoreNotInitialized {
+	public static IModelStore getDefaultModelStore() throws DefaultStoreNotInitializedException {
 		lock.readLock().lock();
 		try {
 			if (Objects.isNull(defaultStore)) {
-				throw new DefaultStoreNotInitialized(NOT_INITIALIZED_MSG);
+				throw new DefaultStoreNotInitializedException(NOT_INITIALIZED_MSG);
 			}
 			return defaultStore;
 		} finally {
@@ -74,13 +74,13 @@ public class DefaultModelStore {
 	
 	/**
 	 * @return the default SPDX 2.X document URi
-	 * @throws DefaultStoreNotInitialized if the <code>initialize(...)</code> was not called prior
+	 * @throws DefaultStoreNotInitializedException if the <code>initialize(...)</code> was not called prior
 	 */
-	public static String getDefaultDocumentUri() throws DefaultStoreNotInitialized {
+	public static String getDefaultDocumentUri() throws DefaultStoreNotInitializedException {
 		lock.readLock().lock();
 		try {
 			if (Objects.isNull(defaultDocumentUri)) {
-				throw new DefaultStoreNotInitialized(NOT_INITIALIZED_MSG);
+				throw new DefaultStoreNotInitializedException(NOT_INITIALIZED_MSG);
 			}
 			return defaultDocumentUri;
 		} finally {
@@ -111,13 +111,13 @@ public class DefaultModelStore {
 
 	/**
 	 * @return the default copy manager
-	 * @throws DefaultStoreNotInitialized if the <code>initialize(...)</code> was not called prior
+	 * @throws DefaultStoreNotInitializedException if the <code>initialize(...)</code> was not called prior
 	 */
-	public static IModelCopyManager getDefaultCopyManager() throws DefaultStoreNotInitialized {
+	public static IModelCopyManager getDefaultCopyManager() throws DefaultStoreNotInitializedException {
 		lock.readLock().lock();
 		try {
 			if (Objects.isNull(defaultCopyManager)) {
-				throw new DefaultStoreNotInitialized(NOT_INITIALIZED_MSG);
+				throw new DefaultStoreNotInitializedException(NOT_INITIALIZED_MSG);
 			}
 			return defaultCopyManager;
 		} finally {
