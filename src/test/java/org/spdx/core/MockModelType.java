@@ -1,6 +1,7 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
@@ -13,10 +14,9 @@ import org.spdx.storage.IModelStore;
 import org.spdx.storage.PropertyDescriptor;
 
 /**
- * @author Gary
- * 
  * Mock model type for testing
  *
+ * @author Gary O'Neall
  */
 public class MockModelType extends CoreModelObject {
 	

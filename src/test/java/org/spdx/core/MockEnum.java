@@ -1,14 +1,14 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
 /**
- * @author Gary O'Neall
- * 
- * Enum for testing
+ * Mock enum for testing
  *
+ * @author Gary O'Neall
  */
 public enum MockEnum implements IndividualUriValue {
 	

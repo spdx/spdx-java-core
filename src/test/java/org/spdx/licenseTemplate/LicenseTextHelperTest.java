@@ -1,20 +1,9 @@
 /**
- * Copyright (c) 2013 Source Auditor Inc.
- * Copyright (c) 2013 Black Duck Software Inc.
- * 
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
-*/
+ * SPDX-FileCopyrightText: Copyright (c) 2013 Source Auditor Inc.
+ * SPDX-FileCopyrightText: Copyright (c) 2013 Black Duck Software Inc.
+ * SPDX-FileType: SOURCE
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package org.spdx.licenseTemplate;
 
 
@@ -24,13 +13,11 @@ import java.util.Map;
 import junit.framework.TestCase;
 
 /**
- * @author Gary O'Neall
+ * Test license text helper
  *
+ * @author Gary O'Neall
  */
 public class LicenseTextHelperTest extends TestCase {
-	
-
-    
 
 	/**
 	 * @throws java.lang.Exception
@@ -234,7 +221,7 @@ public class LicenseTextHelperTest extends TestCase {
 		assertEquals("m", result[3]);
 		assertEquals("corporation", result[4]);
 		assertEquals("2002", result[5]);
-		test = "Claims      If";
+		test = "Claims     If";
 		result = LicenseTextHelper.tokenizeLicenseText(test, tokenToLocation);
 		assertEquals(2, result.length);
 		assertEquals("claims",result[0]);

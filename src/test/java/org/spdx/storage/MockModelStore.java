@@ -1,6 +1,7 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.storage;
 
@@ -19,10 +20,9 @@ import org.spdx.core.InvalidSPDXAnalysisException;
 import org.spdx.core.TypedValue;
 
 /**
- * @author Gary
- * 
  * Mock model store for testing
  *
+ * @author Gary O'Neall
  */
 public class MockModelStore implements IModelStore {
 	

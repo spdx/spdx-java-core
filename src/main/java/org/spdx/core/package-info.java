@@ -1,6 +1,7 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 /**
  * Common classes used by the SPDX model and library

@@ -1,4 +1,10 @@
+/*
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package org.spdx.core;
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
@@ -13,14 +19,10 @@ import org.junit.Test;
 import org.spdx.storage.IModelStore;
 import org.spdx.storage.MockModelStore;
 
-/*
- * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
- */
-
 /**
- * @author Gary O'Neall
+ * Test model registry
  *
+ * @author Gary O'Neall
  */
 public class TestModelRegistry {
 	

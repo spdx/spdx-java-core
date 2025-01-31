@@ -1,16 +1,16 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
 import org.spdx.storage.IModelStore;
 
 /**
- * @author Gary O'Neall
- * 
- * Copy manager for testing
+ * Mock copy manager for testing
  *
+ * @author Gary O'Neall
  */
 public class MockCopyManager implements IModelCopyManager {
 

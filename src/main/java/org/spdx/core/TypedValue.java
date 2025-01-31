@@ -1,5 +1,9 @@
+/**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package org.spdx.core;
-
 
 /**
  * Value which is a stored typed item

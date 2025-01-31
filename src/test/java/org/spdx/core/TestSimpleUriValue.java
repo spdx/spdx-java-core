@@ -1,6 +1,7 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
@@ -11,8 +12,9 @@ import org.junit.Test;
 import org.spdx.storage.MockModelStore;
 
 /**
- * @author Gary O'Neall
+ * Test Simple URI value
  *
+ * @author Gary O'Neall
  */
 public class TestSimpleUriValue {
 	

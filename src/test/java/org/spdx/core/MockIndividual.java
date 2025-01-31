@@ -1,12 +1,14 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
 /**
- * @author Gary O'Neall
+ * Mock individual for testing
  *
+ * @author Gary O'Neall
  */
 public class MockIndividual implements IndividualUriValue {
 	

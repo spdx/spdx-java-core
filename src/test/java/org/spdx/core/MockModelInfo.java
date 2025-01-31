@@ -1,6 +1,7 @@
 /**
+ * SPDX-FileCopyrightText: Copyright (c) 2024 Source Auditor Inc.
+ * SPDX-FileType: SOURCE
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2024 Source Auditor Inc.
  */
 package org.spdx.core;
 
@@ -14,8 +15,9 @@ import javax.annotation.Nullable;
 import org.spdx.storage.IModelStore;
 
 /**
- * @author Gary O'Neall
+ * Mock model information for testing
  *
+ * @author Gary O'Neall
  */
 public class MockModelInfo implements ISpdxModelInfo {
 	
