@@ -19,7 +19,7 @@ public class HtmlTemplateOutputHandler implements ILicenseTemplateOutputHandler 
 	
 	private static final String STARTS_WITH_LETTER_REGEX = "[A-Za-z].*";
 	
-	StringBuilder htmlString = new StringBuilder();
+	final StringBuilder htmlString = new StringBuilder();
 	
 	int optionalNestLevel = 0;
 	boolean movingParagraph = false;	// true if we need to move the end of a

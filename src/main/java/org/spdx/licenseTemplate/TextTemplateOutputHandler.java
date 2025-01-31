@@ -15,7 +15,7 @@ package org.spdx.licenseTemplate;
  */
 public class TextTemplateOutputHandler implements ILicenseTemplateOutputHandler {
 
-	StringBuilder textString = new StringBuilder();
+	final StringBuilder textString = new StringBuilder();
 
 	/* (non-Javadoc)
 	 * @see org.spdx.licenseTemplate.ILicenseTemplateOutputHandler#text(java.lang.String)
