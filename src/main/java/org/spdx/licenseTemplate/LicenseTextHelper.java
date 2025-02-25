@@ -27,10 +27,10 @@ import java.util.regex.Pattern;
  */
 public class LicenseTextHelper {
 	
-	protected static final String TOKEN_SPLIT_REGEX = "(^|[^\\s.,?'();:\"/\\[\\]]{1,100})((\\s|\\.|,|\\?|'|\"|\\(|\\)|;|:|/|\\[|]|$){1,100})";
+	protected static final String TOKEN_SPLIT_REGEX = "(^|[^\\s.,?'();:\"/\\[\\]<>]{1,100})((\\s|\\.|,|\\?|'|\"|\\(|\\)|;|:|/|\\[|]|<|>|$){1,100})";
 	public static final Pattern TOKEN_SPLIT_PATTERN = Pattern.compile(TOKEN_SPLIT_REGEX);
 	protected static final Set<String> PUNCTUATION = Collections.unmodifiableSet(new HashSet<>(
-			Arrays.asList(".",",","?","\"","'","(",")",";",":","/","[", "]")));
+			Arrays.asList(".",",","?","\"","'","(",")",";",":","/","[", "]", "<", ">")));
 	// most of these are comments for common programming languages (C style, Java, Ruby, Python)
 	protected static final Set<String> SKIPPABLE_TOKENS = Collections.unmodifiableSet(new HashSet<>(
 		Arrays.asList("//","/*","*/","/**","#","##","*","**","\"\"\"","/","=begin","=end")));
