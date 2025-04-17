@@ -34,7 +34,7 @@ public class LicenseTextHelper {
 	// most of these are comments for common programming languages (C style, Java, Ruby, Python)
 	protected static final Set<String> SKIPPABLE_TOKENS = Collections.unmodifiableSet(new HashSet<>(
 		Arrays.asList("//","/*","*/","/**","#","##","*","**","\"\"\"","/","=begin","=end")));
-	static final String DASHES_REGEX = "[\\u2012\\u2013\\u2014\\u2015]";
+	static final String DASHES_REGEX = "[\\u2012\\u2013\\u2014\\u2015\\-]{1,2}";
 	static final Pattern SPACE_PATTERN = Pattern.compile("[\\u202F\\u2007\\u2060\\u2009]");
 	static final Pattern COMMA_PATTERN = Pattern.compile("[\\uFF0C\\uFE10\\uFE50]");
 	static final Pattern PER_CENT_PATTERN = Pattern.compile("per cent", Pattern.CASE_INSENSITIVE);
