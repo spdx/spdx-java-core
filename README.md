@@ -27,4 +27,4 @@ Below is a simplified class model diagram which includes example SPDX model vers
 
 ## Development Status
 
-Very much under development and not very stable.
+Reasonably stable.
