@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.spdx.core"},{"l":"org.spdx.licenseTemplate"},{"l":"org.spdx.storage"}]
