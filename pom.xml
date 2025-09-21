@@ -27,13 +27,6 @@
     <name>SPDX</name>
     <url>http://spdx.org</url>
   </organization>
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <name>spdx-spdx-tools</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
   <scm>
     <url>https://github.com/spdx/spdx-java-core</url>
     <connection>scm:git:git://github.com/spdx/spdx-java-core.git</connection>
@@ -171,6 +164,15 @@
         </testResource>
       </testResources>
 	<plugins>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.7.0</version>
+        <extensions>true</extensions>
+        <configuration>
+            <publishingServerId>central</publishingServerId>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
