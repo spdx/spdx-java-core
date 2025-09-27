@@ -1,5 +1,6 @@
 # spdx-java-core
 
+[![Maven Central Version](https://img.shields.io/maven-central/v/org.spdx/spdx-java-core)](https://central.sonatype.com/artifact/org.spdx/spdx-java-core)
 [![javadoc](https://javadoc.io/badge2/org.spdx/spdx-java-core/javadoc.svg)](https://javadoc.io/doc/org.spdx/spdx-java-core)
  
 This repository is a component of the Java library which implements the Java object model for the [System Package Data Exchange (SPDX)](https://spdx.dev/) and provides useful helper functions.
