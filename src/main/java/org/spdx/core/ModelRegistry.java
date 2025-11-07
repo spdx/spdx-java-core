@@ -5,6 +5,8 @@
  */
 package org.spdx.core;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,6 +40,7 @@ public class ModelRegistry {
 	private static final ReadWriteLock lock = new ReentrantReadWriteLock();
 
 	private final Map<String, ISpdxModelInfo> registeredModels = new HashMap<>();
+	private final Map<String, Class<? extends CoreModelObject>> extensions = new HashMap<>();
 	
 	/**
 	 * Private constructor - singleton class
@@ -184,10 +187,40 @@ public class ModelRegistry {
 			if (!containsSpecVersion(specVersion)) {
 				throw new ModelRegistryException(specVersion + DOES_NOT_EXIST_MSG);
 			}
-			return registeredModels.get(specVersion).createModelObject(modelStore, objectUri, 
-					type, copyManager, specVersion, create, idPrefix);
+			if (extensions.containsKey(type)) {
+				return inflateExtension(modelStore, objectUri, type, copyManager, specVersion, create, idPrefix);
+			} else {
+				return registeredModels.get(specVersion).createModelObject(modelStore, objectUri,
+						type, copyManager, specVersion, create, idPrefix);
+			}
 		} finally {
 			lock.readLock().unlock();
+		}
+	}
+
+	private CoreModelObject inflateExtension(IModelStore modelStore, String objectUri, String type,
+											 IModelCopyManager copyManager, String specVersion,
+											 boolean create, String idPrefix) throws InvalidSPDXAnalysisException {
+		try {
+			Constructor<?> con = extensions.get(type).getDeclaredConstructor(IModelStore.class, String.class,
+					IModelCopyManager.class, boolean.class, String.class, String.class);
+			return (CoreModelObject)con.newInstance(modelStore, objectUri, copyManager, create, specVersion, idPrefix);
+		} catch (NoSuchMethodException e) {
+			throw new InvalidSPDXAnalysisException("Could not create the extension type: "+type);
+		} catch (SecurityException e) {
+			throw new InvalidSPDXAnalysisException("Unexpected security exception for extension type: "+type, e);
+		} catch (InstantiationException e) {
+			throw new InvalidSPDXAnalysisException("Unexpected instantiation exception for extension type: "+type, e);
+		} catch (IllegalAccessException e) {
+			throw new InvalidSPDXAnalysisException("Unexpected illegal access exception for extension type: "+type, e);
+		} catch (IllegalArgumentException e) {
+			throw new InvalidSPDXAnalysisException("Unexpected illegal argument exception for extension type: "+type, e);
+		} catch (InvocationTargetException e) {
+			if (e.getTargetException() instanceof InvalidSPDXAnalysisException) {
+				throw (InvalidSPDXAnalysisException)e.getTargetException();
+			} else {
+				throw new InvalidSPDXAnalysisException("Unexpected invocation target exception for extension type: "+type, e);
+			}
 		}
 	}
 
@@ -205,7 +238,7 @@ public class ModelRegistry {
 			if (!registeredModels.containsKey(specVersion)) {
 				throw new ModelRegistryException("No implementation found for SPDX spec version "+specVersion);
 			}
-			return registeredModels.get(specVersion).getTypeToClassMap().get(type);
+			return registeredModels.get(specVersion).getTypeToClassMap().getOrDefault(type, extensions.get(type));
 		} finally {
 			lock.readLock().unlock();
 		}
@@ -218,6 +251,7 @@ public class ModelRegistry {
 		lock.writeLock().lock();
 		try {
 			registeredModels.clear();
+			extensions.clear();;
 		} finally {
 			lock.writeLock().unlock();
 		}
@@ -252,9 +286,30 @@ public class ModelRegistry {
 			if (!containsSpecVersion(specVersion)) {
 				throw new ModelRegistryException(specVersion + DOES_NOT_EXIST_MSG);
 			}
+			if (extensions.containsValue(clazz)) {
+				return false;
+			}
 			return registeredModels.get(specVersion).canBeExternal(clazz);
 		} finally {
 			lock.readLock().unlock();
+		}
+	}
+
+	/**
+	 * Registers an extension class that can be used to extend an SPDX model
+	 * @param type type to be used
+	 * @param clazz class which must be a subclass of ModelObject
+	 * @return the class which was added to the registry
+	 * @throws ModelRegistryException on missing model registry for the provided specVersion
+	 */
+	public Class<?> registerExtensionType(String type, Class<? extends CoreModelObject> clazz) throws ModelRegistryException {
+		Objects.requireNonNull(clazz, "Class can not be null to register extension type");
+		Objects.requireNonNull(type, "Type can not be null to register extension type");
+		lock.writeLock().lock();
+		try {
+			return extensions.put(type, clazz);
+		} finally {
+			lock.writeLock().unlock();
 		}
 	}
 }

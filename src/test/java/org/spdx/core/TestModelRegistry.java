@@ -31,9 +31,7 @@ public class TestModelRegistry {
 	MockModelStore modelStore;
 	MockCopyManager copyManager;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@Before
 	public void setUp() {
 		modelStore = new MockModelStore();
@@ -42,7 +40,7 @@ public class TestModelRegistry {
 
 	/**
 	 * Test method for {@link org.spdx.core.ModelRegistry#containsSpecVersion(java.lang.String)}.
-	 * @throws InvalidSPDXAnalysisException 
+	 * @throws InvalidSPDXAnalysisException on error
 	 */
 	@Test
 	public void testAll() throws InvalidSPDXAnalysisException {
@@ -111,6 +109,72 @@ public class TestModelRegistry {
 		assertEquals(MockEnum.ENUM1, eResult);
 		Object iResult = ModelRegistry.getModelRegistry().uriToIndividual(individual.getIndividualURI(), "3.0.0", null);
 		assertEquals(individual.getIndividualURI(), ((MockIndividual)iResult).getIndividualURI());
+	}
+
+	@Test
+	public void testExtensions() throws InvalidSPDXAnalysisException {
+		ModelRegistry.getModelRegistry().clearAll();
+		assertFalse(ModelRegistry.getModelRegistry().containsSpecVersion("3.0.0"));
+		Map<String, Enum<?>> uriToEnum = new HashMap<>();
+		uriToEnum.put(MockEnum.ENUM1.getIndividualURI(), MockEnum.ENUM1);
+		Map<String, Object> uriToIndividual = new HashMap<>();
+		MockIndividual individual = new MockIndividual();
+		uriToIndividual.put(individual.getIndividualURI(), individual);
+		Map<String, Class<?>> classMap = new HashMap<>();
+		classMap.put(MockModelType.TYPE, MockModelType.class);
+		ModelRegistry.getModelRegistry().registerModel(new ISpdxModelInfo() {
+
+			@Override
+			public Map<String, Enum<?>> getUriToEnumMap() {
+				return uriToEnum;
+			}
+
+			@Override
+			public List<String> getSpecVersions() {
+				return Arrays.asList(new String[] {"3.0.0"});
+			}
+
+			@Override
+			public CoreModelObject createExternalElement(IModelStore store,
+														 String uri, IModelCopyManager copyManager, Class<?> type,
+														 String specVersion) throws InvalidSPDXAnalysisException {
+				return new MockModelType(store, uri, copyManager, true, specVersion);
+			}
+
+			@Override
+			public CoreModelObject createModelObject(IModelStore modelStore,
+													 String objectUri, String type,
+													 IModelCopyManager copyManager, String specVersion,
+													 boolean create, String idPrefix) throws InvalidSPDXAnalysisException {
+				return new MockModelType(modelStore, objectUri, copyManager, create, specVersion);
+			}
+
+			@Override
+			public Map<String, Class<?>> getTypeToClassMap() {
+				return classMap;
+			}
+
+			@Override
+			public Object uriToIndividual(String uri, @Nullable Class<?> type) {
+				return uriToIndividual.get(uri);
+			}
+
+			@Override
+			public boolean canBeExternal(Class<?> clazz) {
+				return false;
+			}
+
+		});
+
+		ModelRegistry.getModelRegistry().registerExtensionType(MockExtension.MOCK_EXTENSION_TYPE, MockExtension.class);
+		assertEquals(MockExtension.class,
+                ModelRegistry.getModelRegistry().typeToClass(MockExtension.MOCK_EXTENSION_TYPE, "3.0.0"));
+		CoreModelObject result = ModelRegistry.getModelRegistry().inflateModelObject(modelStore, "https://my.uri",
+				MockExtension.MOCK_EXTENSION_TYPE, copyManager, "3.0.0", true, "prefix");
+		assertTrue(result instanceof MockExtension);
+		assertEquals(MockExtension.MOCK_EXTENSION_TYPE, result.getType());
+
+
 	}
 
 }
