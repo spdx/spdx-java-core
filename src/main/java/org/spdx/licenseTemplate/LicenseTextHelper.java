@@ -130,8 +130,19 @@ public class LicenseTextHelper {
 		}
 		Map<Integer, LineColumn> tokenToLocationA = new HashMap<>();
 		Map<Integer, LineColumn> tokenToLocationB = new HashMap<>();
-		String[] licenseATokens = tokenizeLicenseText(licenseTextA,tokenToLocationA);
-		String[] licenseBTokens = tokenizeLicenseText(licenseTextB,tokenToLocationB);
+		return isLicenseTextEquivalent(tokenizeLicenseText(licenseTextA,tokenToLocationA),
+				tokenizeLicenseText(licenseTextB,tokenToLocationB));
+	}
+
+	/**
+	 * Returns true if two sets of license tokens is considered a match per
+	 * the SPDX License matching guidelines documented at spdx.org (currently <a href="https://spdx.github.io/spdx-spec/v2.3/license-matching-guidelines-and-templates/">license matching guidelines</a>)
+	 * There are 2 unimplemented features - bullets/numbering is not considered and comments with no whitespace between text is not skipped
+	 * @param licenseATokens normalized license tokens to compare
+	 * @param licenseBTokens normalized license tokens to compare
+	 * @return true if the license text is equivalent
+	 */
+	public static boolean isLicenseTextEquivalent(String[] licenseATokens, String[] licenseBTokens) {
 		int bTokenCounter = 0;
 		int aTokenCounter = 0;
 		String nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
@@ -145,7 +156,7 @@ public class LicenseTextHelper {
 				if (nextAToken != null) {
 					return false;	// there is more stuff in the license text B, so not equal
 				}
-			} else if (tokensEquivalent(nextAToken, nextBToken)) { 
+			} else if (tokensEquivalent(nextAToken, nextBToken)) {
 				// just move onto the next set of tokens
 				nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
 				nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
@@ -167,7 +178,7 @@ public class LicenseTextHelper {
 			}
 		}
 		// need to make sure B is at the end
-        while (canSkip(nextBToken)) {
+		while (canSkip(nextBToken)) {
 			nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
 		}
 		return (nextBToken == null);
