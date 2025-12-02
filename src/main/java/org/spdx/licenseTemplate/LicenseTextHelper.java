@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -100,6 +101,43 @@ public class LicenseTextHelper {
 		NORMALIZE_TOKENS.put("\"", "'");
 		NORMALIZE_TOKENS.put("merchantability", "merchantability");
 	}
+
+	/**
+	 * Class to encapsulate Token iterator
+	 */
+	private static class TokenIterator {
+		private final String[] tokens;
+		private int position = 0;
+		private String current;
+
+		TokenIterator(String[] tokens) {
+			this.tokens = tokens;
+			this.current = getTokenAt(tokens, position++);
+		}
+
+		String current() {
+			return current;
+		}
+
+		boolean hasNext() {
+			return current != null;
+		}
+
+		void advance() {
+			current = getTokenAt(tokens, position++);
+		}
+
+		void skipWhile(Predicate<String> condition) {
+			while (current != null && condition.test(current)) {
+				advance();
+			}
+		}
+
+		boolean hasOnlySkippableTokensRemaining() {
+			skipWhile(LicenseTextHelper::canSkip);
+			return current == null;
+		}
+	}
 		
 	private LicenseTextHelper() {
 		// static class
@@ -143,45 +181,41 @@ public class LicenseTextHelper {
 	 * @return true if the license text is equivalent
 	 */
 	public static boolean isLicenseTextEquivalent(String[] licenseATokens, String[] licenseBTokens) {
-		int bTokenCounter = 0;
-		int aTokenCounter = 0;
-		String nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
-		String nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
-		while (nextAToken != null) {
-			if (nextBToken == null) {
-				// end of b stream
-				while (canSkip(nextAToken)) {
-					nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
-				}
-				if (nextAToken != null) {
-					return false;	// there is more stuff in the license text B, so not equal
-				}
-			} else if (tokensEquivalent(nextAToken, nextBToken)) {
-				// just move onto the next set of tokens
-				nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
-				nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
-			} else {
-				// see if we can skip through some B tokens to find a match
-				while (canSkip(nextBToken)) {
-					nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
-				}
-				// just to be sure, skip forward on the A license
-				while (canSkip(nextAToken)) {
-					nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
-				}
-				if (!tokensEquivalent(nextAToken, nextBToken)) {
-					return false;
-				} else {
-					nextAToken = getTokenAt(licenseATokens, aTokenCounter++);
-					nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
-				}
+		TokenIterator iterA = new TokenIterator(licenseATokens);
+		TokenIterator iterB = new TokenIterator(licenseBTokens);
+
+		while (iterA.hasNext()) {
+			if (!iterB.hasNext()) {
+				return iterA.hasOnlySkippableTokensRemaining();
+			}
+
+			if (tokensEquivalent(iterA.current(), iterB.current())) {
+				iterA.advance();
+				iterB.advance();
+			} else if (!trySkipToMatch(iterA, iterB)) {
+				return false;
 			}
 		}
-		// need to make sure B is at the end
-		while (canSkip(nextBToken)) {
-			nextBToken = getTokenAt(licenseBTokens, bTokenCounter++);
+		return iterB.hasOnlySkippableTokensRemaining();
+	}
+
+	/**
+	 * Skips any tokens that can be skipped and attempts to match the remaining tokens
+//	 * @param iterA Token iterator for comparison
+	 * @param iterB Token iterator for comparison
+	 * @return true if the tokens match
+	 */
+	private static boolean trySkipToMatch(TokenIterator iterA, TokenIterator iterB) {
+		iterB.skipWhile(LicenseTextHelper::canSkip);
+		iterA.skipWhile(LicenseTextHelper::canSkip);
+
+		if (!tokensEquivalent(iterA.current(), iterB.current())) {
+			return false;
 		}
-		return (nextBToken == null);
+
+		iterA.advance();
+		iterB.advance();
+		return true;
 	}
 	
 	/**
