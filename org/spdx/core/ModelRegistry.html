@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -222,19 +222,27 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerExtensionType(java.lang.String,java.lang.Class)">registerExtensionType</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;type,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="CoreModelObject.html" title="class in org.spdx.core">CoreModelObject</a>&gt;&nbsp;clazz)</code></th>
+<td class="colLast">
+<div class="block">Registers an extension class that can be used to extend an SPDX model</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerModel(org.spdx.core.ISpdxModelInfo)">registerModel</a></span>&#8203;(<a href="ISpdxModelInfo.html" title="interface in org.spdx.core">ISpdxModelInfo</a>&nbsp;modelInfo)</code></th>
 <td class="colLast">
 <div class="block">Register a model in the registry</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#typeToClass(java.lang.String,java.lang.String)">typeToClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;type,
            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;specVersion)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang" class="externalLink">Enum</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uriToEnum(java.lang.String,java.lang.String)">uriToEnum</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;uri,
          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;specVersion)</code></th>
@@ -242,7 +250,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Converts a URI to enum</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#uriToIndividual(java.lang.String,java.lang.String,java.lang.Class)">uriToIndividual</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;individualUri,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;specVersion,
@@ -472,7 +480,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.h
 <a id="canBeExternal(java.lang.Class,java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>canBeExternal</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;canBeExternal&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;clazz,
@@ -489,6 +497,27 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.h
          otherwise.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="ModelRegistryException.html" title="class in org.spdx.core">ModelRegistryException</a></code> - If the registry does not support the specified specVersion.</dd>
+</dl>
+</li>
+</ul>
+<a id="registerExtensionType(java.lang.String,java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>registerExtensionType</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;?&gt;&nbsp;registerExtensionType&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;type,
+                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="CoreModelObject.html" title="class in org.spdx.core">CoreModelObject</a>&gt;&nbsp;clazz)
+                               throws <a href="ModelRegistryException.html" title="class in org.spdx.core">ModelRegistryException</a></pre>
+<div class="block">Registers an extension class that can be used to extend an SPDX model</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>type</code> - type to be used</dd>
+<dd><code>clazz</code> - class which must be a subclass of ModelObject</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the class which was added to the registry</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="ModelRegistryException.html" title="class in org.spdx.core">ModelRegistryException</a></code> - on missing model registry for the provided specVersion</dd>
 </dl>
 </li>
 </ul>
