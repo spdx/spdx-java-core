@@ -50,7 +50,7 @@ public class SpdxCoreConstants {
 		/**
 		 * @return the string prefix used in all version strings
 		 */
-		String prefix() {
+		public String prefix() {
 			return prefix;
 		}
 	}
