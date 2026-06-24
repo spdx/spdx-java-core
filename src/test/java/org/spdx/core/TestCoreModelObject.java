@@ -392,4 +392,14 @@ public class TestCoreModelObject {
 		assertEquals(OBJECT_URI, noPrefix.getId());
 	}
 
+	@Test
+	public void testInvalidObjectUri() {
+        try {
+            CoreModelObject prefix = new MockModelType(modelStore, "this is invalid", copyManager, true, "3.0.0");
+			fail("Invalid object URI did not throw an exception");
+        } catch (InvalidSPDXAnalysisException e) {
+            // expected
+        }
+    }
+
 }

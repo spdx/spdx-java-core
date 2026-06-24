@@ -5,6 +5,8 @@
  */
 package org.spdx.core;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -126,6 +128,11 @@ public abstract class CoreModelObject {
 		Objects.requireNonNull(specVersion, "Spec version can not be null");
 		if (!ModelRegistry.getModelRegistry().containsSpecVersion(specVersion)) {
 			throw new InvalidSPDXAnalysisException("Unknown spec version "+specVersion);
+		}
+		try {
+			URI uri = new URI(objectUri);
+		} catch (URISyntaxException e) {
+			throw new InvalidSPDXAnalysisException("Invalid objectUri: "+objectUri, e);
 		}
 		this.modelStore = modelStore;
 		this.copyManager = copyManager;
